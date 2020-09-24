@@ -1,0 +1,57 @@
+/* --------------------------------------- */
+/*                  APP                    */
+/* --------------------------------------- */
+.App {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------- */
+/*                  HOME                   */
+/* --------------------------------------- */
+.Home {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+}
+
+.Home-Products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.Home-Title {
+  color: red;
+  font-size: 3em;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* --------------------------------------- */
+/*                 PRODUCT                 */
+/* --------------------------------------- */
+.Product {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+}
+
+.Product-Image {
+  width: 300px;
+}
+
+.Product-Title {
+  font-size: 3em;
+  margin: 20px 0;
+  text-align: center;
+}

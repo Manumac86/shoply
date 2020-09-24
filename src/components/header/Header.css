@@ -1,0 +1,49 @@
+.Header {
+  align-items: center;
+  background-color: blue;
+  color: white;
+  justify-content: space-between;
+  display: flex;
+  height: 100px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+.Header-List {
+  align-items: center;
+  background-color: blue;
+  color: white;
+  justify-content: flex-end;
+  display: flex;
+  height: 100px;
+  list-style: none;
+  margin: 0;
+}
+
+.Header-List-Item {
+  padding: 10px;
+  text-align: center;
+  width: 80px;
+}
+
+.Header-Logo-Container {
+  display: flex;
+  font-size: 1.3em;
+  font-weight: 800;
+  justify-content: flex-start;
+  align-items: center;
+  width: 180px;
+}
+
+.Header-Logo {
+  width: 80px;
+}
+
+.Header-List-Link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}

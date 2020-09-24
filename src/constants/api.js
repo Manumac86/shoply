@@ -1,0 +1,58 @@
+const api = [
+  {
+    id: 0,
+    description: 'Celular Motorola Moto G8 64gb 4gb Xt-2045 Garantia Oficial',
+    hottest: false,
+    price: '$25,999',
+    stock: 10,
+    title: 'MOTOROLA MOTO G8',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_2X_918890-MLA41186841859_032020-F.webp',
+  },
+  {
+    id: 1,
+    description: 'La funda es de TPU (plástico blando) Transparente con los bordes de colores, de la más alta calidad y super fina!. Protege además los botones de volumen y de encendido.',
+    hottest: true,
+    price: '$775',
+    stock: 10,
+    title: 'Funda Tpu Clear Silicona Huawei P20 Lite + Vidrio Plano',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_2X_970030-MLA42540382374_072020-F.webp',
+  },
+  {
+    id: 2,
+    description: 'Smartwatch Reloj Inteligente Gadnic Original Celular Smart',
+    hottest: true,
+    price: '$2,999',
+    stock: 10,
+    title: 'Smartwatch Bluetooth Gadnic Sim Chip Notificaciones Aplicacion Celular. Tienda Oficial GADNIC',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_2X_920298-MLA43269745971_082020-F.webp',
+  },
+  {
+    id: 3,
+    description: 'Router Nexxt Nebula 1200mbps Rompemuros Dual Band Caballito',
+    hottest: false,
+    price: '$5,190',
+    stock: 10,
+    title: 'Router Nexxt Nebula 1200mbps Rompemuros Dual Band',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_2X_928474-MLA31351907173_072019-F.webp',
+  },
+  {
+    id: 4,
+    description: 'Gorras Curva Planas X10 Uni Gorra Fight Hombre Mujer Unisex',
+    hottest: false,
+    price: '$4,749',
+    stock: 10,
+    title: 'Gorras bordadas de diseño de adulto.',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_2X_751198-MLA43417490763_092020-F.webp',
+  },
+  {
+    id: 5,
+    description: 'Aspiradora Robot Gadnic Inteligente Trapeadora Aspira Polvo',
+    hottest: true,
+    price: '$99,999',
+    stock: 10,
+    title: 'Aspiradora Robot Gadnic Z900 Inteligente Trapeadora Control App',
+    img: 'https://http2.mlstatic.com/D_NQ_NP_2X_663511-MLA32019625619_082019-F.webp',
+  },
+];
+
+export default api;
