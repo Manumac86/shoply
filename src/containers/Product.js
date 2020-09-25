@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom';
 import { CartContext } from '../context/cartContext';
 import Input from "../components/input/Input";
 
+import Button from '../components/button/Button';
+
 function Product({ data }) {
   const { id } = useParams();
   const [size, setSize] = useState('');
   const [showProduct, setShowProduct] = useState(false);
 
-  const [cart, setCart] = useContext(CartContext);
+  const [cart, setCart, sumaProductos] = useContext(CartContext);
 
 
   const onKeyDown = e => {
@@ -78,7 +80,7 @@ function Product({ data }) {
           src={data[id].img}
         />
       </div>
-      <button onClick={addToCart}>Add to Cart</button>
+      <Button styled={true} onClick={addToCart} sign={'Add to Cart'}/>
     </>
   );
 }

@@ -8,7 +8,12 @@ import React from 'react';
  * @return {JSX}       The Button to render.
  */
 function Button(props) {
-  return <button onClick={props.onClick}>{props.sign}</button> 
+  return (
+    <button 
+      style={{color: `${props.styled ? 'red' : 'black'}`}} 
+      onClick={props.onClick}
+    >{props.sign}</button>
+  );
 };
 
 export default Button;
