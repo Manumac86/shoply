@@ -1,4 +1,5 @@
 import React from 'react';
+import './Button.css'
 
 /**
  * The Button component.
@@ -10,7 +11,8 @@ import React from 'react';
 function Button(props) {
   return (
     <button 
-      style={{color: `${props.styled ? 'red' : 'black'}`}} 
+      className="ButtonLink"
+      style={{color: `${props.styled ? 'white' : 'black'}`}} 
       onClick={props.onClick}
     >{props.sign}</button>
   );

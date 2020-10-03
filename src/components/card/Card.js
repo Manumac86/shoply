@@ -13,7 +13,7 @@ const Card = (props) => {
           src={props.product.img}
         />
         <div className="Card-Footer">
-          <h4 className="Card-Price">{props.product.price}</h4>
+          <h4 className="Card-Price">${props.product.price}</h4>
           <p className="Card-Title">{props.product.title}</p>
         </div>
       </NavLink>

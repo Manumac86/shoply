@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { CartContext } from '../context/cartContext';
 
 const Cart = () => {
-  const [cart, setCart] = useContext(CartContext);
-
+  const [cart] = useContext(CartContext);
+  console.log(cart);
   return (
     <div className="Home">
       <h2 className="Home-Title">Cart</h2>

@@ -1,17 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../context/cartContext';
+import { getFirestore } from '../firebase';
 import Input from "../components/input/Input";
+import Loader from '../components/loader/Loader';
+import { NavLink } from 'react-router-dom';
 
 import Button from '../components/button/Button';
 
 function Product({ data }) {
   const { id } = useParams();
   const [size, setSize] = useState('');
-  const [showProduct, setShowProduct] = useState(false);
-
-  const [cart, setCart, sumaProductos] = useContext(CartContext);
-
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(false);
+  
+  const [cart, setCart] = useContext(CartContext);
 
   const onKeyDown = e => {
     e.preventDefault();
@@ -32,36 +35,45 @@ function Product({ data }) {
     // Pero React ya tiene los valores más comunes definidos dentro de este event.
     setSize(event.target.value);
   }
+  
+  useEffect(() => {
+    setLoading(true)
+    const db = getFirestore()
+    const itemCollection = db.collection('items');
+    const item = itemCollection.doc(id);
+
+    item.get()
+    .then((doc) => {
+      if (!doc.exists) {
+        console.log("Item does not exist!");
+        return true;
+      }
+      const dataQuery = doc.data();
+      console.log(dataQuery);
+      setProduct({ id: doc.id, ...doc.data() });
+    })
+    .catch((error) => {
+      console.log('Error searching item: ', error);
+    })
+    .finally(() => {
+      setLoading(false);
+    })
+  }, [id]);
 
   useEffect(() => {
     console.log(size)
   }, [size]);
 
-  useEffect(() => {
-    const onScroll = e => {
-      // e.preventDefault();
-      const newShowProduct = window.scrollY > 50;
-      showProduct !== newShowProduct && setShowProduct(newShowProduct);
-    }
-
-    document.addEventListener('scroll', onScroll);
-
-    return () => {
-      document.removeEventListener('scroll', onScroll);
-    }
-  });
 
   const renderProduct = () => (
     
     <p className='Product-Description'>
-      {data[id].description}
+      {product.description}
     </p>
   )
 
   // Set the Cart Context with the added product
   const addToCart = () => {
-    const product = data[id];
-    console.log(product);
     setCart(currentCart => [...currentCart, product])
   }
 
@@ -69,18 +81,29 @@ function Product({ data }) {
     console.log(cart);
   }, [cart]);
 
-  return (
+  return(
     <>
-      <div className="Product">
-        <h2 className="Product-Title">{data[id].title}</h2>
-        {showProduct && renderProduct()}
-        <img 
-          alt='product'
-          className='Product-Image'
-          src={data[id].img}
-        />
-      </div>
-      <Button styled={true} onClick={addToCart} sign={'Add to Cart'}/>
+      {loading && <Loader />}
+      {!loading &&
+        <div className="Product" style={{"display": "flex", "justifyContent": "center"}}>
+          <h2 className="Product-Title">{product.title}</h2>
+          <img 
+            alt='product'
+            className='Product-Image'
+            src={product.img}
+          />
+          {renderProduct()}
+          <Button
+            styled={true}
+            onClick={addToCart}
+            sign={'Add to Cart'}
+          />
+          <NavLink
+            to={'/cart'}
+            className="ButtonLink"
+          >{cart.length} items Added. Go to Checkout</NavLink>
+        </div>
+      }
     </>
   );
 }

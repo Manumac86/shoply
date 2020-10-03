@@ -1,0 +1,12 @@
+.ButtonLink {
+  background: rgb(55, 197, 55);
+  border: 1px solid gray;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 380px;
+}

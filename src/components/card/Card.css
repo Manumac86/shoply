@@ -1,7 +1,7 @@
 .Card {
   border: 1px solid lightgray;
   box-shadow: 3px 3px rgba(226, 226, 226, 0.692);
-  border-radius: 3px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -29,4 +29,9 @@
 .Card-Title {
   font-size: .8em;
   margin: 0;
+}
+
+.Card a {
+  color: rgb(61, 61, 61);
+  text-decoration: none;
 }
