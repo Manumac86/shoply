@@ -29,6 +29,6 @@ Your app is ready to be deployed!
 - Push your changes
 
 ## Extra Docs: 
-- [Context Docs]('docs/Context.md')
-- [Environment Docs]('docs/Environment.md')
+- [Context Docs](docs/Context.md)
+- [Environment Docs](docs/Environment.md)
 
