@@ -27,3 +27,8 @@ Your app is ready to be deployed!
 - Create a Pull Request 
 - Ask for my review
 - Push your changes
+
+## Extra Docs: 
+- [Context Docs]('./docs/Context.md')
+- [Environment Docs]('./docs/Environment.md')
+
