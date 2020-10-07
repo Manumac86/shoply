@@ -15,6 +15,8 @@ export function getFirebase() {
   return app;
 }
 
+// Esport getFirebase.
+
 export function getFirestore() {
   return firebase.firestore(app);
 }
